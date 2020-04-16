@@ -20,19 +20,38 @@ import {takeEvery, put} from 'redux-saga/effects';
 //Code need for sagas to work
 // Create the rootSaga generator function
 function* rootSaga() {
-    
+    yield takeEvery('FETCH_FAVORITES', fetchFavoriteSaga);
 }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
 //Generator Functions Go Here
+function* fetchFavoriteSaga(action){
+    try{
+        const response = yield axios.get('/api/favorite');
+        yield put ({type: 'SET_FAVORITES', payload: response.data});
+    }
+    catch(error){
+        console.log('Error in fetchFavoriteSaga', error);
+    }
+}
 
 //Reducers Go Here
+const favoriteList = (state = [], action) => {
+    if(action.type === 'SET_FAVORITES'){
+        return action.payload;
+    }
+    else{
+        return state;
+    }
+}
 
 //Creates redux state for the entire app don't for get to add reducers to the combineReducers
 const store = createStore(
-    combineReducers({ }),
+    combineReducers({ 
+        favoriteList,
+     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
 );

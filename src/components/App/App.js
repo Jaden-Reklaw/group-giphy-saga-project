@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Favorites from '../Favorites/Favorites';
 
 //Import Modules for routing pages
 import { HashRouter as Router, Route} from 'react-router-dom';
@@ -15,7 +16,7 @@ class App extends Component {
         <h1>Giphy Search!</h1>
         <Router>
           {/* <Route exact path='/' component={SearchPage} /> */}
-          {/* <Route path='/favorites' component={FavoritePage} /> */}
+          <Route path='/favorites' component={Favorites} />
         </Router> 
       </div>
     );
