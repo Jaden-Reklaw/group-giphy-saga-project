@@ -14,7 +14,7 @@ class Header extends Component {
       return (
         
         <header>
-            <h1>Giphy Search!</h1>
+            <h1>Giphy Treasury</h1>
             <Router>
                 <nav className='sticky'>
                     <ul className="main-nav">

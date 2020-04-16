@@ -4,6 +4,12 @@ body {
 
 h1 {
     text-align: center;
+    background-image: url('https://s.hdnux.com/photos/01/07/05/13/18633410/3/rawImage.jpg');
+    margin: 0;
+    padding: 120px;
+    color: whitesmoke;
+    background-size: cover;
+    background-position: center;
 }
 .main-nav {
     display: flex;
