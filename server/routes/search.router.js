@@ -4,6 +4,7 @@ const axios = require('axios');
 
 router.get('/', (req, res) => {
     let search = req.query;
+    console.log('search',search);
     
     axios.get(`api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}q=${search}`).then(response => {
         res.send(response.data);

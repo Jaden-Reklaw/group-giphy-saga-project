@@ -7,6 +7,7 @@ import { HashRouter as Router, Route, Link} from 'react-router-dom';
 import './Header.css';
 
 //Import Components
+import Favorites from '../Favorites/Favorites';
 
 class Header extends Component {
     render() {
@@ -22,7 +23,7 @@ class Header extends Component {
                     </ul>
                 </nav>
                     {/* <Route exact path='/' component={Search} /> */}
-                    {/* <Route path='/favorites' component={Favorites} /> */}
+                    <Route path='/favorites' component={Favorites} />
             </Router> 
         </header>
       );
