@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Favorites from '../Favorites/Favorites';
 
 //Import Header for all pages
 import Header from '../Header/Header';
-//Import individual pages here
+
+//Import other components here
+import GiphyForm from '../GiphyForm/GiphyForm';
 
 class App extends Component {
 
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <GiphyForm />
       </div>
     );
   }
