@@ -18,7 +18,7 @@ CREATE TABLE "image" (
 
 -- Default categories. You may change them :)
 INSERT INTO "category" ("name")
-VALUES ('funny'), ('cohort'), ('cartoon'), ('nsfw'), ('meme');
+VALUES ('Funny'), ('Cohort'), ('Cartoon'), ('NSFW'), ('Meme');
 
 -- Sample data for favorites
 INSERT INTO "image" ("url", "category_id")
