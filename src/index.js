@@ -21,6 +21,7 @@ import {takeEvery, put} from 'redux-saga/effects';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_FAVORITES', fetchFavoriteSaga);
+    yield takeEvery('FETCH_SEARCH', fetchSearchSaga);
 }
 
 // Create sagaMiddleware
@@ -37,12 +38,29 @@ function* fetchFavoriteSaga(action){
     }
 }
 
+function* fetchSearchSaga(action){
+    try{
+        const response = yield axios.get(`/api/search?q=${action.payload}`);
+        yield put ({type: 'SET_SEARCH', payload: response.data});
+    }
+    catch(error){
+        console.log('Error in fetchSearchSaga', error);
+    }
+}
+
 //Reducers Go Here
 const favoriteList = (state = [], action) => {
     if(action.type === 'SET_FAVORITES'){
         return action.payload;
+    } else {
+        return state;
     }
-    else{
+}
+
+const searchList = (state = [], action) => {
+    if(action.type === 'SET_SEARCH'){
+        return action.payload;
+    } else {
         return state;
     }
 }
@@ -51,6 +69,7 @@ const favoriteList = (state = [], action) => {
 const store = createStore(
     combineReducers({ 
         favoriteList,
+        searchList
      }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
