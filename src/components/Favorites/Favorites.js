@@ -13,20 +13,24 @@ class Favorite extends Component {
 
     render(){
         return(
-            <div id="favorites">
-            {/* <nav>
-                <ul>
-                    <li onClick={this.handleCategory('funny')}>funny</li>
-                    <li onClick={this.handleCategory('cohort')}>cohort</li>
-                    <li onClick={this.handleCategory('cartoon')}>cartoon</li>
-                    <li onClick={this.handleCategory('nsfw')}>nsfw</li>
-                    <li onClick={this.handleCategory('meme')}>meme</li>
-                </ul>
-            </nav> */}
-            <main>
-            {this.props.favoriteList.map((image) => 
-            <div><img src={image.url} alt={image.id} width="320" height="240"/></div>)}
-            </main>
+            <div className="container">
+                {/* <nav>
+                    <ul>
+                        <li onClick={this.handleCategory('funny')}>All</li>
+                        <li onClick={this.handleCategory('funny')}>Funny</li>
+                        <li onClick={this.handleCategory('cohort')}>Cohort</li>
+                        <li onClick={this.handleCategory('cartoon')}>Cartoon</li>
+                        <li onClick={this.handleCategory('nsfw')}>NSFW</li>
+                        <li onClick={this.handleCategory('meme')}>Meme</li>
+                    </ul>
+                </nav> */}
+                {this.props.favoriteList.map((image) => 
+                <div className="element">
+                    <img className="picture" src={image.url} alt={image.name} />
+                <div className="overlay">
+                    <div className="text">{image.name}</div>
+                </div>
+                </div>)}
             </div>
         )
     }
