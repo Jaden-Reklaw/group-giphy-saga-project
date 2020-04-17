@@ -4,10 +4,12 @@ body {
 
 h1 {
     text-align: center;
-    background-image: url('https://s.hdnux.com/photos/01/07/05/13/18633410/3/rawImage.jpg');
+    background-image: url('./images\ \(3\).jpeg');
     margin: 0;
     padding: 120px;
-    color: whitesmoke;
+    color: white;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
     background-size: cover;
     background-position: center;
 }
