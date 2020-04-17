@@ -5,6 +5,8 @@ import Header from '../Header/Header';
 
 //Import other components here
 import GiphyForm from '../GiphyForm/GiphyForm';
+import SearchList from '../SearchList/SearchList';
+
 
 class App extends Component {
 
@@ -13,6 +15,7 @@ class App extends Component {
       <div>
         <Header />
         <GiphyForm />
+        <SearchList />
       </div>
     );
   }

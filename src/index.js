@@ -41,7 +41,7 @@ function* fetchFavoriteSaga(action){
 function* fetchSearchSaga(action){
     try{
         const response = yield axios.get(`/api/search?q=${action.payload}`);
-        yield put ({type: 'SET_SEARCH', payload: response.data});
+        yield put({type: 'SET_SEARCH', payload: response.data});
     }
     catch(error){
         console.log('Error in fetchSearchSaga', error);
@@ -59,7 +59,8 @@ const favoriteList = (state = [], action) => {
 
 const searchList = (state = [], action) => {
     if(action.type === 'SET_SEARCH'){
-        return action.payload;
+        console.log('searchList',action.payload.data);
+        return action.payload.data;
     } else {
         return state;
     }

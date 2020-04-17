@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
     console.log('search',search);
     
     axios.get(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${search.q}`).then(response => {
+        console.log('Response from server is',response.data);
         res.send(response.data);
     }).catch(error => {
         console.log('Error on GET', error);
