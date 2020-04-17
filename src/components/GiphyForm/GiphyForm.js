@@ -26,10 +26,9 @@ class GiphyForm extends Component {
     render() {
         return (
             <div>
-                <pre>{JSON.stringify(this.state.search)}</pre>
                 <form onSubmit={this.submitSearch}>
                     <input type='text' value={this.state.search} onChange={this.handleInputField} />
-                    <input type='submit' value='New Search' />
+                    <input type='submit' value='Giphy Search' />
                 </form>
             </div>
         );
